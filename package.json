@@ -1,5 +1,5 @@
 {
-  "name": "mkleemoff-commandline-inventory-project",
+  "name": "mkleemoff-commandline-inventory-app",
   "version": "1.0.0",
   "description": "This is the Command-line Inventory Application Project for Module 2. It is a CRUD app. It is an application where employees can keep track of the inventory of a store. Employees can create new items, update items, see a list of items, see details of one item and delete items. Your application should choose a particular resource or theme and be named appropriately.",
   "main": "index.js",
