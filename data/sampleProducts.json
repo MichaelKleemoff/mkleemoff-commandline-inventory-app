@@ -1,0 +1,20 @@
+[
+	{
+		"id": "sRvw",
+		"name": "Rye",
+		"priceInCents": 439,
+		"inStock": true
+	},
+	{
+		"id": "m5cb",
+		"name": "Whole Wheat",
+		"priceInCents": 379,
+		"inStock": true
+	},
+	{
+		"id": "ht7k",
+		"name": "Sourdough",
+		"priceInCents": 639,
+		"inStock": false
+	}
+]
