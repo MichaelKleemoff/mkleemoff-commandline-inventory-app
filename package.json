@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node index.js"
+    "start": "node index.js",
+		"index": "node index.js index",
+		"create": "node index.js create",
+		"show": "node index.js show",
+		"update": "node index.js update",
+		"destroy": "node index.js destroy"
   },
   "author": "Michael Kleemoff",
   "license": "ISC",
