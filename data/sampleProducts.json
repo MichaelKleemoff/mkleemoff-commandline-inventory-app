@@ -3,18 +3,21 @@
 		"id": "sRvw",
 		"name": "Rye",
 		"priceInCents": 439,
+		"isGlutenFree": false,
 		"inStock": true
 	},
 	{
 		"id": "m5cb",
 		"name": "Whole Wheat",
 		"priceInCents": 379,
+		"isGlutenFree": true,
 		"inStock": true
 	},
 	{
 		"id": "ht7k",
 		"name": "Sourdough",
 		"priceInCents": 639,
+		"isGlutenFree": false,
 		"inStock": false
 	}
 ]
