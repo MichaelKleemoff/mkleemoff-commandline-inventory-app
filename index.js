@@ -1,6 +1,6 @@
 const { writeJSONFile, readJSONFile } = require('./src/helpers');
 
-const { create } = require('./src/productsController');
+const { create, index } = require('./src/productsController');
 
 const inform = console.log;
 
@@ -20,6 +20,10 @@ function run() {
 		case 'create':
 			updatedProducts = create(products, product, price, gluten, availability);
 			writeToFile = true;
+			break;
+		case 'index':
+			const productsView = index(products);
+			inform(productsView);
 			break;
 		default:
 			inform('There was an error.');

@@ -10,7 +10,9 @@
 		"create": "node index.js create",
 		"show": "node index.js show",
 		"update": "node index.js update",
-		"destroy": "node index.js destroy"
+		"destroy": "node index.js destroy",
+		"total": "node index.js total",
+		"cancel": "node index.js "
   },
   "author": "Michael Kleemoff",
   "license": "ISC",

@@ -14,6 +14,11 @@ function create(products, productName, price, isGlutenFree, inStock) {
 	return products;
 }
 
+function index(products) {
+	return products.map((product) => `${product.id} ${product.name}`).join('\n');
+}
+
 module.exports = {
 	create,
+	index,
 };
