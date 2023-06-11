@@ -38,6 +38,10 @@ function show(products, productId) {
 	)}`;
 }
 
+// function edit(products, productId, updatedProduct) {
+//   const index = products.findIndex((product) => product.id === )
+// }
+
 module.exports = {
 	create,
 	index,

@@ -14,7 +14,50 @@ function run() {
 	let writeToFile = false;
 	let updatedProducts = [];
 
-	inform('Welcome to our 🌟Supreme Bread Bakery🌟 App 🍞🥖🥯🥨 \n\n');
+	inform(
+		`Welcome to our 🌟${chalk
+			.rgb(129, 132, 85)
+			.bgYellowBright('SUPREME BREAD BAKERY')}🌟 App 🍞🥖🥯🥨 \n\n`
+	);
+	inform(
+		`This is a custom-built inventory app for ${chalk.yellow.italic(
+			'The Supreme Bread Bakery'
+		)}. \n`
+	);
+	inform(`${chalk.bgBlue.bold('INSTRUCTIONS:')} \n`);
+
+	inform(`👉 To add a bread to the inventory: \n`);
+	inform(
+		`${chalk.italic('Enter')} ${chalk.cyan.bgMagenta(
+			'npm run create'
+		)} ${chalk.italic('followed by')} ${chalk.cyan.bgMagenta.bold(
+			'<PRODUCT NAME>'
+		)} ${chalk.cyan.bgMagenta.bold(
+			'<PRICE IN CENTS>'
+		)} ${chalk.cyan.bgMagenta.bold(
+			'<IS GLUTEN FREE>'
+		)} ${chalk.cyan.bgMagenta.bold('<IS IN STOCK>')} ${chalk.italic(
+			', where each description in angle brackets is replaced by the described input and all of them are separated by spaces'
+		)}. \n`
+	);
+
+	inform(
+		`👉 To show a list of all the bread IDs with their associated names: \n`
+	);
+	inform(
+		`${chalk.italic('Enter')} ${chalk.cyan.bgMagenta('npm run index')}. \n`
+	);
+
+	inform(`👉 To show a specific bread with all its details using its ID: \n`);
+	inform(
+		`${chalk.italic('Enter')} ${chalk.cyan.bgMagenta(
+			'npm run show'
+		)} ${chalk.italic('followed by')} ${chalk.cyan.bgMagenta.bold(
+			'<PRODUCT ID>'
+		)} ${chalk.italic(
+			', where <PRODUCT ID> in angle brackets is replaced by the inputted ID of the desired bread'
+		)}. \n`
+	);
 
 	switch (action) {
 		case 'create':
@@ -23,14 +66,14 @@ function run() {
 			break;
 		case 'index':
 			const productsView = index(products);
-			inform(`${productsView}\n`);
+			inform(`${chalk.bgGreen.bold('OUTPUT:')} \n\n${productsView}\n`);
 			break;
 		case 'show':
 			const productView = show(products, product);
-			inform(`${productView}\n`);
+			inform(`${chalk.bgGreen.bold('OUTPUT:')} \n\n${productView}\n`);
 			break;
 		default:
-			inform('There was an error.');
+			inform(`${chalk.bgRed.bold('OUTPUT:')} \n\nThere was an error. \n`);
 	}
 	if (writeToFile) {
 		writeJSONFile('data', 'products.json', updatedProducts);
