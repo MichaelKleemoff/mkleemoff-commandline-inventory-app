@@ -1,5 +1,11 @@
 const { writeJSONFile, readJSONFile } = require('./src/helpers');
-const { create, edit, index, show } = require('./src/productsController');
+const {
+	create,
+	destroy,
+	edit,
+	index,
+	show,
+} = require('./src/productsController');
 const chalk = require('chalk');
 
 const inform = console.log;
@@ -81,6 +87,10 @@ function run() {
 				process.argv[6],
 				process.argv[7]
 			);
+			writeToFile = true;
+			break;
+		case 'destroy':
+			updatedProducts = destroy(products, product);
 			writeToFile = true;
 			break;
 		default:

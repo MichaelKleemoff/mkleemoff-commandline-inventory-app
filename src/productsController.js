@@ -73,8 +73,22 @@ function edit(
 	}
 }
 
+function destroy(products, productId) {
+	const index = products.findIndex((product) => product.id === productId);
+
+	if (index > -1) {
+		products.splice(index, 1);
+		inform('Bread successfully removed from inventory.');
+		return products;
+	} else {
+		inform('Bread not found. No action taken.');
+		return products;
+	}
+}
+
 module.exports = {
 	create,
+	destroy,
 	edit,
 	index,
 	show,
