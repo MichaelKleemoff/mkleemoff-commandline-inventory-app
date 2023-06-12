@@ -86,7 +86,18 @@ function destroy(products, productId) {
 	}
 }
 
+function cart(products, productName) {
+	const foundProduct = products.find((product) => product.name === productName);
+
+	if (foundProduct === undefined) {
+		return `${productName} was not found.`;
+	}
+
+	return foundProduct;
+}
+
 module.exports = {
+	cart,
 	create,
 	destroy,
 	edit,

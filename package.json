@@ -11,8 +11,8 @@
 		"show": "node index.js show",
 		"update": "node index.js update",
 		"destroy": "node index.js destroy",
-		"total": "node index.js total",
-		"cancel": "node index.js "
+		"cart": "node index.js cart",
+		"cancelCart": "node index.js cancelCart"
   },
   "author": "Michael Kleemoff",
   "license": "ISC",
