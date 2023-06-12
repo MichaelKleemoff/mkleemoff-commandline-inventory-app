@@ -1,5 +1,5 @@
 const { writeJSONFile, readJSONFile } = require('./src/helpers');
-const { create, index, show } = require('./src/productsController');
+const { create, edit, index, show } = require('./src/productsController');
 const chalk = require('chalk');
 
 const inform = console.log;
@@ -71,6 +71,17 @@ function run() {
 		case 'show':
 			const productView = show(products, product);
 			inform(`${chalk.bgGreen.bold('OUTPUT:')} \n\n${productView}\n`);
+			break;
+		case 'update':
+			updatedProducts = edit(
+				products,
+				product,
+				process.argv[4],
+				process.argv[5],
+				process.argv[6],
+				process.argv[7]
+			);
+			writeToFile = true;
 			break;
 		default:
 			inform(`${chalk.bgRed.bold('OUTPUT:')} \n\nThere was an error. \n`);

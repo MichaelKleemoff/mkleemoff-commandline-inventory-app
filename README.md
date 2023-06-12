@@ -10,6 +10,6 @@ A unique **ID** will be assigned to each new bread created. This **ID** can then
 
 ### Set up
 
-1. Either `clone` this repository in your **CLI** or download and unzip the **zip file** included in this repository in your **CLI** to the desired location on your system.
+1. Either `clone` this repository in your **CLI** or `download` and `unzip` the **zip file** included in this repository in your **CLI** to the desired location on your system.
 
 2.

@@ -11,7 +11,9 @@ function create(products, productName, price, isGlutenFree, inStock) {
 		isGlutenFree: JSON.parse(isGlutenFree),
 		inStock: JSON.parse(inStock),
 	};
+
 	products.push(product);
+
 	return products;
 }
 
@@ -21,6 +23,7 @@ function index(products) {
 
 function show(products, productId) {
 	const product = products.find((product) => product.id === productId);
+
 	return `${chalk.yellowBright.bgCyan.bold.italic(
 		'Product ID:'
 	)} ${chalk.yellowBright(product.id)} ${chalk.magentaBright.bgCyan.bold.italic(
@@ -38,12 +41,41 @@ function show(products, productId) {
 	)}`;
 }
 
-// function edit(products, productId, updatedProduct) {
-//   const index = products.findIndex((product) => product.id === )
-// }
+function edit(
+	products,
+	productId,
+	updatedProductName,
+	updatedProductPrice,
+	updatedProductGluten,
+	updatedProductStock
+) {
+	const index = products.findIndex((product) => product.id === productId);
+
+	if (index > -1) {
+		products[index].id = productId;
+		products[index].name = updatedProductName
+			? updatedProductName
+			: products[index].name;
+		products[index].priceInCents = updatedProductPrice
+			? Number(updatedProductPrice)
+			: products[index].priceInCents;
+		products[index].isGlutenFree = updatedProductGluten
+			? JSON.parse(updatedProductGluten)
+			: products[index].isGlutenFree;
+		products[index].inStock = updatedProductStock
+			? JSON.parse(updatedProductStock)
+			: products[index].inStock;
+		inform('Bread successfully updated.');
+		return products;
+	} else {
+		inform('Bread not found. No action taken.');
+		return products;
+	}
+}
 
 module.exports = {
 	create,
+	edit,
 	index,
 	show,
 };
